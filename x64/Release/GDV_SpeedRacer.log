@@ -1,0 +1,21 @@
+﻿  Collision.cpp
+  Entity.cpp
+  Game.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(21,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+  GameOverScreen.cpp
+  main.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(21,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Obstacle.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(21,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(29,16): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(31,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  PhysicsObject.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(21,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Player.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(21,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Vector2.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 110 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  GDV_SpeedRacer.vcxproj -> D:\C++ Projects\GDV_SpeedRacer\x64\Release\GDV_SpeedRacer.exe
