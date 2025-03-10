@@ -26,13 +26,14 @@ private:
 	ScoreSystem scoreSystem;
 	Obstacle Ground;
 
+	Player Tester = Player({ 0,0 }, {0,0});
 
-	Obstacle Car1 = Obstacle({ 50,80 }, 2.6, {1,10});
-	Obstacle Car2 = Obstacle({ 50,80 }, 2.8, {1,10});
-	Obstacle Car3 = Obstacle({ 50,80 }, 2.8, {1.1,10});
-	Obstacle Car4 = Obstacle({ 50,80 }, 3.1, {1.2,10});
-	Obstacle Car5 = Obstacle({ 50,80 }, 2.6, {1.5,10});
-	Obstacle Car6 = Obstacle({ 50,80 }, 2.6, {1.5,10});
+	Obstacle Car1 = Obstacle({ 40,60 }, 2.6, {5,10});
+	Obstacle Car2 = Obstacle({ 40,60 }, 2.8, {1,10});
+	Obstacle Car3 = Obstacle({ 40,60 }, 2.8, {1.1,10});
+	Obstacle Car4 = Obstacle({ 40,60 }, 3.1, {1.2,10});
+	Obstacle Car5 = Obstacle({ 40,60 }, 2.6, {1.5,10});
+	Obstacle Car6 = Obstacle({ 40,60 }, 2.6, {1.5,10});
 
 	Wall wallLeft = Wall({ 80, player.GetPosition().y }, {200,300});
 	Wall wallRight = Wall({860, player.GetPosition().y}, {200,300});

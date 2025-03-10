@@ -17,6 +17,8 @@ public:
 	void SetScoreSystem(ScoreSystem&);
 
 	void RandomizeValues();
+	
+	void Destroy();
 
 	Collision collider;
 

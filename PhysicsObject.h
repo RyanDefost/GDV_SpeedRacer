@@ -6,6 +6,8 @@
 class PhysicsObject: public Entity
 {
 public:
+	void CheckVelocity();
+	
 	void UpdatePhysics();
 	void AddForce(Vector2);
 	void SetForce(Vector2);
@@ -14,6 +16,8 @@ public:
 
 	Vector2 currentForce = Vector2::zero;
 protected:
+	void CapVelocity();
+
 	Vector2 velocity = Vector2::zero;
 	float speed = 0.5;
 	float maxSpeed = 10;

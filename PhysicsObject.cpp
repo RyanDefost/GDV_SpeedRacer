@@ -1,6 +1,19 @@
 #include "PhysicsObject.h"
 #include <iostream>
 
+void PhysicsObject::CheckVelocity()
+{
+	for (size_t i = 0; i < 100; i++)
+	{
+		AddForce({ 0,10 });
+		UpdatePhysics();
+
+		if (velocity.x > maxSpeed || velocity.y > maxSpeed) {
+			std::cout << "MaxSpeed To high: " << velocity.x << " | " << velocity.y << "\n";
+		}
+	}
+}
+
 void PhysicsObject::UpdatePhysics()
 {
 	AddForce(Vector2{-velocity.x, -velocity.y} * friction);
@@ -28,6 +41,17 @@ void PhysicsObject::CalculateAcceleration()
 	float force = currentForce.magnitude();
 	Vector2 normalized = currentForce.normalized(currentForce);
 	acceleration = (normalized * force) / mass;
+}
+
+void PhysicsObject::CapVelocity()
+{
+	if (velocity.x > maxSpeed) {
+		velocity.x = maxSpeed;
+	}
+
+	if (velocity.y > maxSpeed) {
+		velocity.y = maxSpeed;
+	}
 }
 
 //Credit: Bas de Reus [Helped make sense of the Physics on paper.]

@@ -77,3 +77,8 @@ void Obstacle::RandomizeValues()
 
 	SetSpawnPosition();
 }
+
+void Obstacle::Destroy()
+{
+	delete _scoreSystem;
+}

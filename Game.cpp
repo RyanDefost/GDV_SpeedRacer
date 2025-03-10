@@ -32,6 +32,8 @@ void Game::Start()
     if (!playerCar.loadFromFile("Assets/RedCar.png"))
         std::cout << "FAILED TO LOAD IMAGE";
 
+    Tester.CheckVelocity();
+
     Update();
 }
 
