@@ -1,26 +1,56 @@
-﻿  Game.cpp
+﻿  BaseState.cpp
 D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(26,19): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(31,38): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(32,38): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(33,44): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(33,38): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(34,44): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(34,38): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(35,38): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(36,38): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(5,31): error C2504: 'BaseState': base class undefined
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(8,13): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(9,14): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(10,14): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(11,12): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(12,18): error C2143: syntax error: missing ';' before '&'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(12,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(12,33): error C2238: unexpected token(s) preceding ';'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(5,31): error C2504: 'BaseState': base class undefined
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(8,13): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(9,14): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(10,14): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(11,12): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(12,19): error C2143: syntax error: missing ';' before '&'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(12,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(12,33): error C2238: unexpected token(s) preceding ';'
+  FastEnemyState.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(26,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.cpp(5,24): warning C4305: 'argument': truncation from 'double' to 'float'
+  FSM.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(26,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(5,31): error C2504: 'BaseState': base class undefined
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(8,13): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(9,14): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(10,14): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(11,12): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(12,18): error C2143: syntax error: missing ';' before '&'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(12,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\SlowEnemyState.h(12,33): error C2238: unexpected token(s) preceding ';'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(5,31): error C2504: 'BaseState': base class undefined
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(8,13): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(9,14): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(10,14): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(11,12): error C2061: syntax error: identifier 'Obstacle'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(12,19): error C2143: syntax error: missing ';' before '&'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(12,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\FastEnemyState.h(12,33): error C2238: unexpected token(s) preceding ';'
+  Game.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(26,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.cpp(28,60): warning C4305: 'argument': truncation from 'double' to 'float'
   main.cpp
 D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(26,19): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(31,38): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(32,38): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(33,44): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(33,38): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(34,44): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(34,38): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(35,38): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Game.h(36,38): warning C4305: 'argument': truncation from 'double' to 'float'
-  Generating code
-  4 of 155 functions ( 2.6%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  GDV_SpeedRacer.vcxproj -> D:\C++ Projects\GDV_SpeedRacer\x64\Release\GDV_SpeedRacer.exe
+  Obstacle.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(26,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(75,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(76,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(77,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  ObstacleSpawner.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(26,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\ObstacleSpawner.cpp(22,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\ObstacleSpawner.cpp(32,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\ObstacleSpawner.cpp(51,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  SlowEnemyState.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(26,19): warning C4305: 'initializing': truncation from 'double' to 'float'

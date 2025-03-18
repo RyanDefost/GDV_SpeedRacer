@@ -9,13 +9,6 @@ Game::Game()
     window.create(sf::VideoMode(840, 650), "SpeedMathRacer");
     window.setFramerateLimit(60);
 
-    Car1.SetScoreSystem(scoreSystem);
-    Car2.SetScoreSystem(scoreSystem);
-    Car3.SetScoreSystem(scoreSystem);
-    Car4.SetScoreSystem(scoreSystem);
-    Car5.SetScoreSystem(scoreSystem);
-    Car6.SetScoreSystem(scoreSystem);
-
     Start();
 }
 
@@ -32,7 +25,7 @@ void Game::Start()
     if (!playerCar.loadFromFile("Assets/RedCar.png"))
         std::cout << "FAILED TO LOAD IMAGE";
 
-    Tester.CheckVelocity();
+    spawner.Spawn(5, Obstacle(scoreSystem, car, { 40,60 }, 2.6, { 5,10 }));
 
     Update();
 }
@@ -60,20 +53,10 @@ void Game::Update()
         player.Update();
         CheckCollisions();
 
-        Car1.Update();
-        Car2.Update();
-        Car3.Update();
-        Car4.Update();
-        Car5.Update();
-        Car6.Update();
+        spawner.UpdateObstacles(window);
 
 
 	    player.Display(window, playerCar);
-        Car1.Display(window, car);
-        Car2.Display(window, car);
-        Car3.Display(window, car);
-        Car4.Display(window, car);
-        Car5.Display(window, car);
         window.display();
     }   
 }
@@ -81,17 +64,7 @@ void Game::Update()
 void Game::CheckCollisions()
 {
     //Checks collision with Cars
-    if (player.collider.CheckBoxCollision(Car1.collider))
-        gameOver = true;
-    if (player.collider.CheckBoxCollision(Car2.collider))
-        gameOver = true;
-    if (player.collider.CheckBoxCollision(Car3.collider))
-        gameOver = true;
-    if (player.collider.CheckBoxCollision(Car4.collider))
-        gameOver = true;
-    if (player.collider.CheckBoxCollision(Car5.collider))
-        gameOver = true;
-    if (player.collider.CheckBoxCollision(Car5.collider))
+    if (spawner.CheckCollisions(player.collider))
         gameOver = true;
 
     //Collision to keep player inside the screen
@@ -100,7 +73,6 @@ void Game::CheckCollisions()
 
     if (player.collider.CheckBoxCollision(wallRight.collider))
         player.AddForce(-player.currentForce + Vector2::left);
-
 
     if (player.GetPosition().y < 530)
         player.AddForce(-player.currentForce + Vector2::down);

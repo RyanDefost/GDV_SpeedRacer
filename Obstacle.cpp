@@ -3,24 +3,39 @@
 #include <iostream>
 #include <random>
 
-Obstacle::Obstacle(Vector2 s, float sp, Vector2 cF)
+Obstacle::Obstacle(ScoreSystem sc, sf::Texture im, Vector2 s, float sp, Vector2 cF)
 {
+	currentState = &SlowEnemyState::getInstance();
+
 	_speed = sp;
+	_texture = im;
 	constantForce = cF;
 
 	SetSize(s);
-
 	RandomizeValues();
+	SetScoreSystem(sc);
 
 	collider.SetSize(s);
 	collider.SetPosition(GetPosition());
 }
 
-void Obstacle::Display(sf::RenderWindow& window, sf::Texture image)
+void Obstacle::ToggleState()
+{
+	currentState->Toggle(this);
+}
+
+void Obstacle::SetState(BaseState& newState)
+{
+	currentState->Exit(this);
+	currentState = &newState;
+	currentState->Enter(this);
+}
+
+void Obstacle::Display(sf::RenderWindow& window)
 {
 	windowSize = { (float)window.getSize().x, (float)window.getSize().y};
 
-	sf::Sprite sprite(image);
+	sf::Sprite sprite(_texture);
 	sprite.setPosition(position.x - Scale.x / 2, position.y - Scale.y / 2);
 
 	window.draw(sprite);
@@ -28,6 +43,8 @@ void Obstacle::Display(sf::RenderWindow& window, sf::Texture image)
 
 void Obstacle::Update()
 {
+	currentState->Update(this);
+
 	DetectEdge();
 	SetForce({ constantForce.x, constantForce.y * _speed });
 
@@ -81,4 +98,9 @@ void Obstacle::RandomizeValues()
 void Obstacle::Destroy()
 {
 	delete _scoreSystem;
+}
+
+bool Obstacle::operator==(Obstacle obstacle)
+{
+	return (std::addressof(*this) == std::addressof(obstacle));
 }

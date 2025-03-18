@@ -133,27 +133,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaseState.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="FastEnemyState.cpp" />
+    <ClCompile Include="FSM.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameOverScreen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Obstacle.cpp" />
+    <ClCompile Include="ObstacleSpawner.cpp" />
+    <ClCompile Include="ObstacleStates.cpp" />
     <ClCompile Include="PhysicsObject.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScoreSystem.cpp" />
+    <ClCompile Include="SlowEnemyState.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseState.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="FastEnemyState.h" />
+    <ClInclude Include="FSM.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameOverScreen.h" />
     <ClInclude Include="Obstacle.h" />
+    <ClInclude Include="ObstacleSpawner.h" />
+    <ClInclude Include="ObstacleStates.h" />
     <ClInclude Include="PhysicsObject.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ScoreSystem.h" />
+    <ClInclude Include="SlowEnemyState.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
