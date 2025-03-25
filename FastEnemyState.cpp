@@ -1,8 +1,9 @@
 #include "FastEnemyState.h"
+#include "SlowEnemyState.h"
 
 void FastEnemyState::Enter(Obstacle* obstacle)
 {
-    obstacle->SetSpeed(2.6);
+    obstacle->SetSpeed(10);
 }
 
 void FastEnemyState::Toggle(Obstacle* obstacle)
@@ -23,9 +24,4 @@ BaseState& FastEnemyState::getInstance()
 {
     static FastEnemyState singelton;
     return singelton;
-}
-
-FastEnemyState& FastEnemyState::operator=(const FastEnemyState& other)
-{
-    // TODO: insert return statement here
 }

@@ -4,20 +4,22 @@
 #include "PhysicsObject.h"
 #include "Collision.h"
 #include "ScoreSystem.h"
+#include <vector>
 #include "BaseState.h"
-#include "SlowEnemyState.h"
-#include "FastEnemyState.h"
+
+using std::vector;
 
 class BaseState;
 
 class Obstacle : public PhysicsObject
 {
 public:
-	Obstacle(ScoreSystem sc, sf::Texture image, Vector2 s = Vector2{ 10,10 }, float sp = 1, Vector2 cF = {0,1});
+	Obstacle(ScoreSystem sc, sf::Texture image, Vector2 s = Vector2{ 10,10 }, float sp = 1, Vector2 cF = { 0,1 });
 
 	inline BaseState* GetCurrentState() const { return currentState; }
 	void ToggleState();
 	void SetState(BaseState& newState);
+	vector<BaseState> GetStates();
 
 	void Display(sf::RenderWindow& window);
 	void Update();
@@ -34,8 +36,10 @@ public:
 	bool operator==(Obstacle);
 
 	Collision collider;
+
 private:
 	BaseState* currentState;
+
 
 	float _speed;
 	sf::Texture _texture;

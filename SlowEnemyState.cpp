@@ -1,4 +1,5 @@
 #include "SlowEnemyState.h"
+#include "FastEnemyState.h"
 
 void SlowEnemyState::Enter(Obstacle* obstacle)
 {
@@ -23,9 +24,4 @@ BaseState& SlowEnemyState::getInstance()
 {
 	static SlowEnemyState singelton;
 	return singelton;
-}
-
-SlowEnemyState& SlowEnemyState::operator=(const SlowEnemyState& other)
-{
-	// TODO: insert return statement here
 }

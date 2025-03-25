@@ -12,7 +12,6 @@ public:
 	static BaseState& getInstance();
 
 private:
-	SlowEnemyState();
-	SlowEnemyState(const SlowEnemyState& other);
-	SlowEnemyState& operator=(const SlowEnemyState& other);
+	//SlowEnemyState();
+	//SlowEnemyState(const SlowEnemyState& other);
 };
