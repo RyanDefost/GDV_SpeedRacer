@@ -10,8 +10,8 @@ public:
 
 	void ChangeState();
 
-	//std::map<, BaseState>
-	//std::vector<BaseState> stateMap = {};
+	//std::map<, BaseObstacleState>
+	//std::vector<BaseObstacleState> stateMap = {};
 
 private:
 

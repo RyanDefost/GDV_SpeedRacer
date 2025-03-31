@@ -1,2 +1,12 @@
-﻿  Vector2.cpp
+﻿  Obstacle.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(26,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(76,23): warning C4311: 'type cast': pointer truncation from 'time_t (__cdecl *)(time_t *const )' to 'int'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(76,23): warning C4302: 'type cast': truncation from 'time_t (__cdecl *)(time_t *const )' to 'int'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(80,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(81,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(82,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  ZigZagObstacleState.cpp
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(26,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\ZigZagObstacleState.cpp(37,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   GDV_SpeedRacer.vcxproj -> D:\C++ Projects\GDV_SpeedRacer\x64\Debug\GDV_SpeedRacer.exe

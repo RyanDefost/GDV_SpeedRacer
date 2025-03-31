@@ -13,6 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\ObstacleStates">
+      <UniqueIdentifier>{9f80d4f2-fb84-4ccc-af18-38953b62b691}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ObstacleStates">
+      <UniqueIdentifier>{e2c3b268-cf49-468a-89eb-6d6ec03ee5cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Obstacles">
+      <UniqueIdentifier>{ad5a421d-674e-4419-a673-ea904c7c57a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Obstacles">
+      <UniqueIdentifier>{5da006a7-e6eb-4a7f-a44f-bea9bde6f65d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{17e3dad3-f2f6-4a15-a633-9b17a56c7f5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{57bd5ed1-21cb-43c6-bd04-8b69d4b64313}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -27,44 +45,38 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PhysicsObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Collision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Obstacle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameOverScreen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ScoreSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Wall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BaseObstacleState.cpp">
+      <Filter>Source Files\ObstacleStates</Filter>
+    </ClCompile>
+    <ClCompile Include="ZigZagObstacleState.cpp">
+      <Filter>Source Files\ObstacleStates</Filter>
+    </ClCompile>
+    <ClCompile Include="CalmObstacleState.cpp">
+      <Filter>Source Files\ObstacleStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>Source Files\Obstacles</Filter>
+    </ClCompile>
     <ClCompile Include="ObstacleSpawner.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Obstacles</Filter>
     </ClCompile>
-    <ClCompile Include="FSM.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="BaseState.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="GameOverScreen.cpp">
+      <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="ObstacleStates.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FastEnemyState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SlowEnemyState.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="ScoreSystem.cpp">
+      <Filter>Source Files\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,44 +89,38 @@
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PhysicsObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Collision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Obstacle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameOverScreen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ScoreSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Wall.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ZigZagObstacleState.h">
+      <Filter>Header Files\ObstacleStates</Filter>
+    </ClInclude>
+    <ClInclude Include="CalmObstacleState.h">
+      <Filter>Header Files\ObstacleStates</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseObstacleState.h">
+      <Filter>Header Files\ObstacleStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>Header Files\Obstacles</Filter>
+    </ClInclude>
     <ClInclude Include="ObstacleSpawner.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Obstacles</Filter>
     </ClInclude>
-    <ClInclude Include="FSM.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="BaseState.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="GameOverScreen.h">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="ObstacleStates.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FastEnemyState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SlowEnemyState.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="ScoreSystem.h">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

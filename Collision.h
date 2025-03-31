@@ -9,13 +9,16 @@ public:
 
 	bool CheckCollision(Collision);
 	bool CheckBoxCollision(Collision);
+	bool GetColliding() { return isColliding; }
+
 	Vector2 Position;
-
 	Vector2 size = {1,1};
+
+	bool operator==(Collision*);
+
 protected:
+	bool isColliding;
+
 	float radius = size.x / 2;
-
-private:
-
 };
 

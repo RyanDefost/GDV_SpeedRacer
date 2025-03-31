@@ -9,11 +9,11 @@ class ObstacleSpawner
 public:
 	ObstacleSpawner();
 
-	void Spawn(int amount, Obstacle obstacleType);
+	void Spawn(int amount);
 	void Despawn();
 
 	void UpdateObstacles(sf::RenderWindow& window);
-	bool CheckCollisions(Collision collider);
+	bool CheckCollisions(Collision* collider);
 protected:
 	void AddObstacle(Obstacle obstacle);
 	void RemoveObstacle(Obstacle obstacle);

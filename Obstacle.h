@@ -5,32 +5,35 @@
 #include "Collision.h"
 #include "ScoreSystem.h"
 #include <vector>
-#include "BaseState.h"
+#include "BaseObstacleState.h"
+#include <iostream>
 
 using std::vector;
 
-class BaseState;
+class BaseObstacleState;
 
 class Obstacle : public PhysicsObject
 {
 public:
-	Obstacle(ScoreSystem sc, sf::Texture image, Vector2 s = Vector2{ 10,10 }, float sp = 1, Vector2 cF = { 0,1 });
+	Obstacle(ScoreSystem* sc, sf::Texture image, Vector2 s = Vector2{ 10,10 }, float sp = 1, Vector2 cF = { 0,1 });
 
-	inline BaseState* GetCurrentState() const { return currentState; }
+	inline BaseObstacleState* GetCurrentState() const { return currentState; }
 	void ToggleState();
-	void SetState(BaseState& newState);
-	vector<BaseState> GetStates();
+	void SetState(BaseObstacleState& newState);
 
 	void Display(sf::RenderWindow& window);
 	void Update();
 
 	bool DetectEdge();
 	void SetSpawnPosition();
-	void SetScoreSystem(ScoreSystem&);
+	void SetScoreSystem(ScoreSystem*);
 
 	void RandomizeValues();
-	void SetSpeed(float value) { _speed = value; }
 
+	void SetConstantSpeed(Vector2 constantSpeed) { constantForce = constantSpeed; }
+	void SetSpeed(float value) { _speed = value; }
+	float GetSpeed() { return _speed; }
+	
 	void Destroy();
 
 	bool operator==(Obstacle);
@@ -38,8 +41,7 @@ public:
 	Collision collider;
 
 private:
-	BaseState* currentState;
-
+	BaseObstacleState* currentState;
 
 	float _speed;
 	sf::Texture _texture;

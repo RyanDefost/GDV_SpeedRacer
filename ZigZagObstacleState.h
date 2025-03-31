@@ -1,18 +1,17 @@
 #pragma once
 #include "Obstacle.h"
-#include "BaseState.h"
+#include "BaseObstacleState.h"
 
-class FastEnemyState : public BaseState
+class ZigZagObstacleState : public BaseObstacleState
 {
 public:
 	void Enter(Obstacle* obstacle);
 	void Toggle(Obstacle* obstacle);
 	void Update(Obstacle* obstacle);
 	void Exit(Obstacle* obstacle);
-	static BaseState& getInstance();
+	static BaseObstacleState& getInstance();
 
 private:
-	//FastEnemyState();
-	//FastEnemyState(const FastEnemyState& other);
+	void RandomizeSpeed(Obstacle* obstacle);
 };
 

@@ -25,7 +25,7 @@ void Game::Start()
     if (!playerCar.loadFromFile("Assets/RedCar.png"))
         std::cout << "FAILED TO LOAD IMAGE";
 
-    spawner.Spawn(5, Obstacle(scoreSystem, car, { 40,60 }, 2.6, { 5,10 }));
+    spawner.Spawn(5);
 
     Update();
 }
@@ -64,7 +64,7 @@ void Game::Update()
 void Game::CheckCollisions()
 {
     //Checks collision with Cars
-    if (spawner.CheckCollisions(player.collider))
+    if (spawner.CheckCollisions(&player.collider))
         gameOver = true;
 
     //Collision to keep player inside the screen
@@ -100,6 +100,6 @@ void Game::DrawText(sf::RenderWindow& window, sf::Font font, int size, sf::Color
     text.setFillColor(color);
     text.setStyle(sf::Text::Bold | sf::Text::Underlined);
    
-    text.setString("Score: " + std::to_string(scoreSystem.currentScore));
+    text.setString("Score: " + std::to_string(scoreSystem->currentScore));
     window.draw(text);
 }

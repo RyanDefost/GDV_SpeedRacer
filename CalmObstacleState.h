@@ -1,17 +1,16 @@
 #pragma once
 #include "Obstacle.h"
-#include "BaseState.h"
+#include "BaseObstacleState.h"
 
-class SlowEnemyState : public BaseState
+class CalmObstacleState : public BaseObstacleState
 {
 public:
 	void Enter(Obstacle* obstacle);
 	void Toggle(Obstacle* obstacle);
 	void Update(Obstacle* obstacle);
 	void Exit(Obstacle* obstacle);
-	static BaseState& getInstance();
+	static BaseObstacleState& getInstance();
 
 private:
-	//SlowEnemyState();
-	//SlowEnemyState(const SlowEnemyState& other);
+	void RandomizeSpeed(Obstacle* obstacle);
 };

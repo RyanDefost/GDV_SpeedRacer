@@ -1,13 +1,11 @@
 #include "Obstacle.h"
-#include "SlowEnemyState.h"
+#include "CalmObstacleState.h"
+#include "ZigZagObstacleState.h"
 #include <ctime>
-#include <iostream>
 #include <random>
 
-Obstacle::Obstacle(ScoreSystem sc, sf::Texture im, Vector2 s, float sp, Vector2 cF)
+Obstacle::Obstacle(ScoreSystem* sc, sf::Texture im, Vector2 s, float sp, Vector2 cF)
 {
-	currentState = &SlowEnemyState::getInstance();
-
 	_speed = sp;
 	_texture = im;
 	constantForce = cF;
@@ -16,8 +14,13 @@ Obstacle::Obstacle(ScoreSystem sc, sf::Texture im, Vector2 s, float sp, Vector2 
 	RandomizeValues();
 	SetScoreSystem(sc);
 
+	SetSpawnPosition();
+
 	collider.SetSize(s);
 	collider.SetPosition(GetPosition());
+
+	currentState = &CalmObstacleState::getInstance();
+	currentState->Enter(this);
 }
 
 void Obstacle::ToggleState()
@@ -25,7 +28,7 @@ void Obstacle::ToggleState()
 	currentState->Toggle(this);
 }
 
-void Obstacle::SetState(BaseState& newState)
+void Obstacle::SetState(BaseObstacleState& newState)
 {
 	currentState->Exit(this);
 	currentState = &newState;
@@ -46,13 +49,13 @@ void Obstacle::Update()
 {
 	currentState->Update(this);
 
-	DetectEdge();
-	SetForce({ constantForce.x, constantForce.y * _speed });
+	SetForce(Vector2{ constantForce.x, constantForce.y } * _speed);
 
 	UpdatePhysics();
 	collider.SetPosition(GetPosition());
 
 	if (GetPosition().y > windowSize.y + GetSize().y * 2) {
+
 		SetSpawnPosition();
 		_scoreSystem->UpdateScore(100);
 	}
@@ -62,7 +65,6 @@ bool Obstacle::DetectEdge()
 {
 	if (position.x < 175 || position.x > windowSize.x - 175) {
 		constantForce.x = -constantForce.x;
-		std::cout << currentForce.x;
 		return true;
 	}
 
@@ -71,6 +73,8 @@ bool Obstacle::DetectEdge()
 
 void Obstacle::SetSpawnPosition()
 {
+	srand((unsigned int)((int)time + rand() % 100));
+
 	float size = GetSize().x;
 
 	int spacingX = (windowSize.x - 350) / size;
@@ -83,9 +87,9 @@ void Obstacle::SetSpawnPosition()
 		SetPosition({ (spawnOffset * size)+175, -spawnOffsetY + -50 });
 }
 
-void Obstacle::SetScoreSystem(ScoreSystem& scoreSystem)
+void Obstacle::SetScoreSystem(ScoreSystem* scoreSystem)
 {
-	_scoreSystem = &scoreSystem;
+	_scoreSystem = scoreSystem;
 }
 
 void Obstacle::RandomizeValues()

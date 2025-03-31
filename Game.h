@@ -24,7 +24,7 @@ private:
 
 	Player player = Player({ 420,550 }, { 50,70 });
 
-	ScoreSystem scoreSystem;
+	ScoreSystem* scoreSystem = &ScoreSystem::getInstance();
 	ObstacleSpawner spawner;
 	//Obstacle Ground;
 
