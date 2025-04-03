@@ -15,6 +15,7 @@ public:
 	void CalculateAcceleration();
 
 	Vector2 currentForce = Vector2::zero;
+
 protected:
 	void CapVelocity();
 
@@ -29,7 +30,7 @@ protected:
 	Vector2 grafity = { 0,0 };
 
 	sf::Clock clock;
-	float _time = 1;
+	float time = 1;
 
 private:
 };

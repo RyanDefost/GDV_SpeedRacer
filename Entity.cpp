@@ -7,22 +7,22 @@ void Entity::Destroy()
 
 void Entity::SetPosition(Vector2 pos)
 {
-	position.x = pos.x;
-	position.y = pos.y;
+	this->position.x = pos.x;
+	this->position.y = pos.y;
 }
 
 Vector2 Entity::GetPosition()
 {
-	return position;
+	return this->position;
 }
 
 void Entity::SetSize(Vector2 size)
 {
-	Scale.x = size.x;
-	Scale.y = size.y;
+	this->Scale.x = size.x;
+	this->Scale.y = size.y;
 }
 
 Vector2 Entity::GetSize()
 {
-	return Scale;
+	return this->Scale;
 }

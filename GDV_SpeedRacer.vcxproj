@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AggressiveObstacleState.cpp" />
     <ClCompile Include="BaseObstacleState.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AggressiveObstacleState.h" />
     <ClInclude Include="BaseObstacleState.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Entity.h" />

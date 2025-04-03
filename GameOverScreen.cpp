@@ -5,16 +5,16 @@
 void GameOverScreen::Display(sf::RenderWindow& window)
 {
     
-    if (!font.loadFromFile("Assets/arial.ttf"))
+    if (!this->font.loadFromFile("Assets/arial.ttf"))
         std::cout << "FAILED TO LOAD FONT";
 
-    text.setFont(font);
-    text.setString("You LOST");
-    text.setCharacterSize(48);
-    text.setPosition(window.getSize().x/2 - 120, window.getSize().y / 2);
-    text.setFillColor(sf::Color::Red);
-    text.setStyle(sf::Text::Bold);
-    window.draw(text);
+    this->text.setFont(this->font);
+    this->text.setString("You LOST");
+    this->text.setCharacterSize(48);
+    this->text.setPosition(window.getSize().x/2 - 120, window.getSize().y / 2);
+    this->text.setFillColor(sf::Color::Red);
+    this->text.setStyle(sf::Text::Bold);
+    window.draw(this->text);
 
 	window.display();
 }

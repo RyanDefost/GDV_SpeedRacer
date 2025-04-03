@@ -8,30 +8,39 @@ void ZigZagObstacleState::Enter(Obstacle* obstacle)
     RandomizeSpeed(obstacle);
 
     obstacle->SetConstantSpeed({ 5,10 });
-    std::cout << "ZigZagObstacle" << "\n";
+    obstacle->RandomizeValues();
 }
 
-void ZigZagObstacleState::Toggle(Obstacle* obstacle)
-{
-    obstacle->SetState(CalmObstacleState::getInstance());
-}
-
+/// <summary>
+/// Runs every cycle and checks if the state should be changed.
+/// </summary>
+/// <param name="obstacle"> The obstacle that currently has this state.</param>
 void ZigZagObstacleState::Update(Obstacle* obstacle)
 {
-    obstacle->DetectEdge();
+    //Check if position is at the bottom of the screen.
+    if (obstacle->GetPosition().y > 650) 
+    {
+        obstacle->SetState(CalmObstacleState::GetInstance());
+        return;
+    }
+
+    //If colliding with edge boost to other direction.
+    if (obstacle->DetectEdge()) 
+    {
+        obstacle->AddForce({ -obstacle->currentForce.y * 2 , 0});
+    }
 }
 
-void ZigZagObstacleState::Exit(Obstacle* obstacle)
-{
-}
-
-
-BaseObstacleState& ZigZagObstacleState::getInstance()
+BaseObstacleState& ZigZagObstacleState::GetInstance()
 {
     static ZigZagObstacleState singelton;
     return singelton;
 }
 
+/// <summary>
+/// Randomizes the current speed of the obstacle within the given amount.
+/// </summary>
+/// <param name="obstacle"> The obstacle that currently has this state.</param>
 void ZigZagObstacleState::RandomizeSpeed(Obstacle* obstacle)
 {
     float addedSpeed = rand() % 2;

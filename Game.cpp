@@ -5,101 +5,106 @@
 
 Game::Game()
 {
-    Vector2 windowSize = { (float)window.getSize().x, (float)window.getSize().y };
-    window.create(sf::VideoMode(840, 650), "SpeedMathRacer");
-    window.setFramerateLimit(60);
+    Vector2 windowSize = { (float)this->window.getSize().x, (float)this->window.getSize().y };
+    this->window.create(sf::VideoMode(840, 650), "SpeedMathRacer");
+    this->window.setFramerateLimit(60);
 
     Start();
 }
 
 void Game::Start()
 {
-    if (!font.loadFromFile("Assets/arial.ttf"))
+    if (!this->font.loadFromFile("Assets/arial.ttf"))
         std::cout << "FAILED TO LOAD FONT";
 
-    if (!background.loadFromFile("Assets/Road.png"))
+    if (!this->background.loadFromFile("Assets/Road.png"))
         std::cout << "FAILED TO LOAD IMAGE";
 
-    if (!car.loadFromFile("Assets/YellowBuggy.png"))
+    if (!this->car.loadFromFile("Assets/YellowBuggy.png"))
         std::cout << "FAILED TO LOAD IMAGE";
-    if (!playerCar.loadFromFile("Assets/RedCar.png"))
+    if (!this->playerCar.loadFromFile("Assets/RedCar.png"))
         std::cout << "FAILED TO LOAD IMAGE";
 
-    spawner.Spawn(5);
+    this->player->SetPosition({ 420,550 });
+    this->player->SetSize({ 50,70 });
 
-    Update();
+    this->spawner.Spawn(7);
+
+    Run();
 }
 
-void Game::Update()
+void Game::Run()
 {
-    while (window.isOpen())
+    while (this->window.isOpen())
     {
         sf::Event event;
-        while (window.pollEvent(event))
+        while (this->window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
-                window.close();
+                this->window.close();
         }
-        window.clear();
+        this->window.clear();
 
-        DrawBackground(window, background);
-        DrawText(window, font, 32 , sf::Color::White);
+        DrawBackground(this->window, this->background);
+        DrawText(this->window, this->font, 32 , sf::Color::White);
        
-        if (gameOver == true) {
-            gameOverScreen.Display(window);
+        if (this->gameOver == true) 
+        {
+            this->gameOverScreen.Display(this->window);
             continue;
         }
 
-        player.Update();
+        this->player->Update();
         CheckCollisions();
 
-        spawner.UpdateObstacles(window);
+        this->spawner.UpdateObstacles(this->window);
 
 
-	    player.Display(window, playerCar);
-        window.display();
+        this->player->Display(this->window, this->playerCar);
+        this->window.display();
     }   
 }
 
 void Game::CheckCollisions()
 {
     //Checks collision with Cars
-    if (spawner.CheckCollisions(&player.collider))
-        gameOver = true;
+    if (this->spawner.CheckCollisions(&this->player->collider))
+        this->gameOver = true;
 
     //Collision to keep player inside the screen
-    if (player.collider.CheckBoxCollision(wallLeft.collider))
-        player.AddForce(-player.currentForce + Vector2::right);
+    if (this->player->collider.CheckBoxCollision(this->wallLeft.collider))
+        this->player->AddForce(-this->player->currentForce + Vector2::right);
 
-    if (player.collider.CheckBoxCollision(wallRight.collider))
-        player.AddForce(-player.currentForce + Vector2::left);
+    if (this->player->collider.CheckBoxCollision(this->wallRight.collider))
+        this->player->AddForce(-this->player->currentForce + Vector2::left);
 
-    if (player.GetPosition().y < 530)
-        player.AddForce(-player.currentForce + Vector2::down);
-    if (player.GetPosition().y > 590)
-        player.AddForce(-player.currentForce + Vector2::up);
+    if (this->player->GetPosition().y < 530)
+        this->player->AddForce(-this->player->currentForce + Vector2::down);
+    if (this->player->GetPosition().y > 590)
+        this->player->AddForce(-this->player->currentForce + Vector2::up);
 }
 
 void Game::DrawBackground(sf::RenderWindow& window ,sf::Texture background)
 {
     sf::Sprite sprite(background);
-    backgroundPosition += backgroundSpeed;
-    sprite.setPosition(0, backgroundPosition);
+    this->backgroundPosition += this->backgroundSpeed;
+    sprite.setPosition(0, this->backgroundPosition);
 
-    if (backgroundPosition > 0) {
-        backgroundPosition = -650;
+    if (this->backgroundPosition > 0) 
+    {
+        this->backgroundPosition = -650;
     }
 
     window.draw(sprite);
 }
 
 void Game::DrawText(sf::RenderWindow& window, sf::Font font, int size, sf::Color color) {
-    text.setFont(font);
+    this->text.setFont(font);
 
-    text.setCharacterSize(size);
-    text.setFillColor(color);
-    text.setStyle(sf::Text::Bold | sf::Text::Underlined);
+    this->text.setCharacterSize(size);
+    this->text.setFillColor(color);
+    this->text.setStyle(sf::Text::Bold | sf::Text::Underlined);
    
-    text.setString("Score: " + std::to_string(scoreSystem->currentScore));
+    this->text.setString("Score: " + std::to_string(this->scoreSystem->currentScore));
     window.draw(text);
 }

@@ -8,49 +8,52 @@ void PhysicsObject::CheckVelocity()
 		AddForce({ 0,10 });
 		UpdatePhysics();
 
-		if (velocity.x > maxSpeed || velocity.y > maxSpeed) {
-			std::cout << "MaxSpeed To high: " << velocity.x << " | " << velocity.y << "\n";
+		if (this->velocity.x > this->maxSpeed || this->velocity.y > this->maxSpeed) 
+		{
+			std::cout << "MaxSpeed To high: " << this->velocity.x << " | " << this->velocity.y << "\n";
 		}
 	}
 }
 
 void PhysicsObject::UpdatePhysics()
 {
-	AddForce(Vector2{-velocity.x, -velocity.y} * friction);
+	AddForce(Vector2{-this->velocity.x, -this->velocity.y} *this->friction);
 	CalculateAcceleration();
 	
-	velocity = velocity * _time + (Vector2{0.5,0.5} * acceleration) * (_time * _time);
-	position = position + (velocity * speed);
+	this->velocity = this->velocity * this->time + (Vector2{0.5,0.5} *this->acceleration) * (this->time * this->time);
+	this->position = this->position + (this->velocity * this->speed);
 
-	currentForce = { 0,0 };
+	this->currentForce = { 0,0 };
 }
 
 void PhysicsObject::AddForce(Vector2 force)
 {
-	currentForce = currentForce + force;
+	this->currentForce = this->currentForce + force;
 }
 
 void PhysicsObject::SetForce(Vector2 force)
 {
-	currentForce = force;
-	velocity = { 0,0 };
+	this->currentForce = force;
+	this->velocity = { 0,0 };
 }
 
 void PhysicsObject::CalculateAcceleration()
 {
-	float force = currentForce.magnitude();
-	Vector2 normalized = currentForce.normalized(currentForce);
-	acceleration = (normalized * force) / mass;
+	float force = this->currentForce.magnitude();
+	Vector2 normalized = this->currentForce.normalized(this->currentForce);
+	this->acceleration = (normalized * force) / this->mass;
 }
 
 void PhysicsObject::CapVelocity()
 {
-	if (velocity.x > maxSpeed) {
-		velocity.x = maxSpeed;
+	if (this->velocity.x > this->maxSpeed) 
+	{
+		this->velocity.x = this->maxSpeed;
 	}
 
-	if (velocity.y > maxSpeed) {
-		velocity.y = maxSpeed;
+	if (this->velocity.y > this->maxSpeed) 
+	{
+		this->velocity.y = this->maxSpeed;
 	}
 }
 

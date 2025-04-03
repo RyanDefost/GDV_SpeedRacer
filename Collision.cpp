@@ -3,27 +3,29 @@
 
 void Collision::SetPosition(Vector2 vector)
 {
-    Position = vector;
+    this->Position = vector;
 }
 
 void Collision::SetSize(Vector2 vector)
 {
-    size = vector;
+    this->size = vector;
 }
 
 bool Collision::CheckCollision(Collision collider)
 {
     Vector2 pos1 = collider.Position;
-    Vector2 pos2 = Position;
+    Vector2 pos2 = this->Position;
 
 
     Vector2 distance = pos1 - pos2;
-    if (distance.magnitude() <= (size.x/2 + collider.size.x/2)) {
-        isColliding = true;
+    if (distance.magnitude() <= (this->size.x/2 + collider.size.x/2)) 
+    {
+        this->isColliding = true;
         return true;
     }
-    else {
-        isColliding = false;
+    else 
+    {
+        this->isColliding = false;
         return false;
     }
     
@@ -32,19 +34,19 @@ bool Collision::CheckCollision(Collision collider)
 bool Collision::CheckBoxCollision(Collision collider)
 {
     Vector2 pos1 = collider.Position;
-    Vector2 pos2 = Position;
+    Vector2 pos2 = this->Position;
 
     //AABB-collision
     if (pos1.x < pos2.x + collider.size.x &&
-        pos1.x + size.x > pos2.x &&
+        pos1.x + this->size.x > pos2.x &&
         pos1.y < pos2.y + collider.size.y &&
-        pos1.y + size.y > pos2.y)
+        pos1.y + this->size.y > pos2.y)
     {
-        isColliding = true;
+        this->isColliding = true;
         return true;
     }
 
-    isColliding = false;
+    this->isColliding = false;
     return false;
 }
 

@@ -9,58 +9,58 @@ Vector2 Vector2::down	= { 0,1 };
 
 Vector2 Vector2::operator*(Vector2 vector)
 {
-	vector.x = x * vector.x;
-	vector.y = y * vector.y;
+	vector.x = this->x * vector.x;
+	vector.y = this->y * vector.y;
 	return vector;
 }
 
 Vector2 Vector2::operator+(Vector2 vector)
 {
-	vector.x = x + vector.x;
-	vector.y = y + vector.y;
+	vector.x = this->x + vector.x;
+	vector.y = this->y + vector.y;
 	return vector;
 }
 
 Vector2 Vector2::operator-(Vector2 vector)
 {
-	vector.x = x - vector.x;
-	vector.y = y - vector.y;
+	vector.x = this->x - vector.x;
+	vector.y = this->y - vector.y;
 	return vector;
 }
 
 Vector2 Vector2::operator*(float f)
 {
-	return Vector2{ f * x, f * y };
+	return Vector2{ f * this->x, f * this->y };
 }
 
 Vector2 Vector2::operator+(float f)
 {
-	return Vector2{ f + x, f + y };
+	return Vector2{ f + this->x, f + this->y };
 }
 
 Vector2 Vector2::operator/(float f)
 {
-	if (f == 0 && x == 0 && y == 0)
+	if (f == 0 && this->x == 0 && this->y == 0)
 		return Vector2{ 0,0 };
 
-	return Vector2{x / f, y / f};
+	return Vector2{ this->x / f, this->y / f};
 }
 
 Vector2 Vector2::operator-()
 {
-	return {-x, -y};
+	return {-this->x, -this->y};
 }
 
 Vector2 Vector2::operator+=(Vector2 vector)
 {
-	x = x + vector.x;
-	y = y + vector.y;
+	this->x = this->x + vector.x;
+	this->y = this->y + vector.y;
 	return *this;
 }
 
 float Vector2::magnitude()
 {
-	return sqrt((x * x) + (y * y));
+	return sqrt((this->x * this->x) + (this->y * this->y));
 }
 
 Vector2 Vector2::normalized(Vector2 vector)

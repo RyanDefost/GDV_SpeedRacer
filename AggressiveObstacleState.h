@@ -1,10 +1,13 @@
 #pragma once
 #include "Obstacle.h"
+#include "Player.h"
 #include "BaseObstacleState.h"
 
-class ZigZagObstacleState : public BaseObstacleState
+class AggressiveObstacleState : public BaseObstacleState
 {
 public:
+	AggressiveObstacleState();
+
 	void Enter(Obstacle* obstacle);
 	void Update(Obstacle* obstacle);
 	void Exit(Obstacle* obstacle) {};
@@ -12,6 +15,10 @@ public:
 	static BaseObstacleState& GetInstance();
 
 private:
+	Player* player;
+	float followSpeedMultiplier = 10;
+
+	Vector2 GetPlayerDiraction(Obstacle* obstacle);
 	void RandomizeSpeed(Obstacle* obstacle);
 };
 

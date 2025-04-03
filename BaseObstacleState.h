@@ -6,10 +6,9 @@ class Obstacle;
 class BaseObstacleState
 {
 public:
-	virtual void Enter(Obstacle* obstacle) {};
-	virtual void Toggle(Obstacle* obstacle) {};
-	virtual void Update(Obstacle* obstacle) {};
-	virtual void Exit(Obstacle* obstacle) {};
+	virtual void Enter(Obstacle* obstacle) = 0;
+	virtual void Update(Obstacle* obstacle) = 0;
+	virtual void Exit(Obstacle* obstacle) = 0;
 
 	virtual ~BaseObstacleState() {}
 };

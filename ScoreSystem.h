@@ -5,7 +5,7 @@ public:
 	int currentScore = 0;
 	void UpdateScore(float addedValue);
 
-	static ScoreSystem& getInstance();
+	static ScoreSystem& GetInstance();
 
 protected:
 

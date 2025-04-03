@@ -14,14 +14,12 @@ public:
 
 	void UpdateObstacles(sf::RenderWindow& window);
 	bool CheckCollisions(Collision* collider);
+
 protected:
 	void AddObstacle(Obstacle obstacle);
 	void RemoveObstacle(Obstacle obstacle);
 
 
 	vector<Obstacle> currentObstacles = {};
-
-private:
-	
 };
 

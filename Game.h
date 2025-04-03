@@ -22,14 +22,13 @@ public:
 private:
 	sf::RenderWindow window;
 
-	Player player = Player({ 420,550 }, { 50,70 });
+	Player* player = &Player::GetInstance();
 
-	ScoreSystem* scoreSystem = &ScoreSystem::getInstance();
+	ScoreSystem* scoreSystem = &ScoreSystem::GetInstance();
 	ObstacleSpawner spawner;
-	//Obstacle Ground;
 
-	Wall wallLeft = Wall({ 80, player.GetPosition().y }, {200,300});
-	Wall wallRight = Wall({860, player.GetPosition().y}, {200,300});
+	Wall wallLeft = Wall({ 80, player->GetPosition().y }, {200,300});
+	Wall wallRight = Wall({860, player->GetPosition().y}, {200,300});
 
 	sf::Text text;
 	sf::Font font;

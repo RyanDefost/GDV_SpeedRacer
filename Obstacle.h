@@ -18,7 +18,6 @@ public:
 	Obstacle(ScoreSystem* sc, sf::Texture image, Vector2 s = Vector2{ 10,10 }, float sp = 1, Vector2 cF = { 0,1 });
 
 	inline BaseObstacleState* GetCurrentState() const { return currentState; }
-	void ToggleState();
 	void SetState(BaseObstacleState& newState);
 
 	void Display(sf::RenderWindow& window);
@@ -31,8 +30,8 @@ public:
 	void RandomizeValues();
 
 	void SetConstantSpeed(Vector2 constantSpeed) { constantForce = constantSpeed; }
-	void SetSpeed(float value) { _speed = value; }
-	float GetSpeed() { return _speed; }
+	void SetSpeed(float value) { speed = value; }
+	float GetSpeed() { return speed; }
 	
 	void Destroy();
 
@@ -41,13 +40,13 @@ public:
 	Collision collider;
 
 private:
+	ScoreSystem* scoreSystem = &ScoreSystem::GetInstance();
 	BaseObstacleState* currentState;
 
-	float _speed;
-	sf::Texture _texture;
+	float speed;
+	sf::Texture texture;
 	Vector2 constantForce;
 
 	Vector2 windowSize = {840, 650};
-	ScoreSystem* _scoreSystem;
 };
 

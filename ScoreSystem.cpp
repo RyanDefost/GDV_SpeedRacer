@@ -3,10 +3,10 @@
 
 void ScoreSystem::UpdateScore(float addedValue)
 {
-	currentScore = currentScore + addedValue;
+    this->currentScore = currentScore + addedValue;
 }
 
-ScoreSystem& ScoreSystem::getInstance()
+ScoreSystem& ScoreSystem::GetInstance()
 {
     static ScoreSystem singelton;
     return singelton;

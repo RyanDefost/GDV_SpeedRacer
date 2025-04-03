@@ -9,7 +9,7 @@ public:
 
 	bool CheckCollision(Collision);
 	bool CheckBoxCollision(Collision);
-	bool GetColliding() { return isColliding; }
+	bool GetIsColliding() { return isColliding; }
 
 	Vector2 Position;
 	Vector2 size = {1,1};

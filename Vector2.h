@@ -25,8 +25,5 @@ public:
 
 	float magnitude();
 	Vector2 normalized(Vector2);
-
-private:
-
 };
 
