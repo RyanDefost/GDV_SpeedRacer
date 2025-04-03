@@ -28,7 +28,7 @@ void Game::Start()
     this->player->SetPosition({ 420,550 });
     this->player->SetSize({ 50,70 });
 
-    this->spawner.Spawn(7);
+    this->spawner.Spawn(9);
 
     Run();
 }

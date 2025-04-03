@@ -46,7 +46,7 @@ Vector2 AggressiveObstacleState::GetPlayerDiraction(Obstacle* obstacle)
     Vector2 frontPlayerPosition = Vector2({ playerPosition.x, obstaclePosition.y });
 
     Vector2 diraction =  obstaclePosition - frontPlayerPosition;
-    diraction = -diraction.normalized(diraction);
+    diraction = -diraction.Normalized(diraction);
 
     return diraction;
 }

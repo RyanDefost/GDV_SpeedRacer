@@ -16,7 +16,7 @@ public:
 
 private:
 	Player* player;
-	float followSpeedMultiplier = 10;
+	float followSpeedMultiplier = 8;
 
 	Vector2 GetPlayerDiraction(Obstacle* obstacle);
 	void RandomizeSpeed(Obstacle* obstacle);

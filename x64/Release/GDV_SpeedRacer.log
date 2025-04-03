@@ -1,31 +1,12 @@
-﻿  AggressiveObstacleState.cpp
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(27,19): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\AggressiveObstacleState.cpp(46,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  BaseObstacleState.cpp
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(27,19): warning C4305: 'initializing': truncation from 'double' to 'float'
-  CalmObstacleState.cpp
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(27,19): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\CalmObstacleState.cpp(39,19): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  Game.cpp
+﻿  Game.cpp
 D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(27,19): warning C4305: 'initializing': truncation from 'double' to 'float'
   Obstacle.cpp
 D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(27,19): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(75,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(76,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(77,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  ObstacleSpawner.cpp
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(27,19): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\ObstacleSpawner.cpp(20,65): warning C4305: 'argument': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\ObstacleSpawner.cpp(32,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\ObstacleSpawner.cpp(44,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\ObstacleSpawner.cpp(66,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  ZigZagObstacleState.cpp
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(27,19): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\ZigZagObstacleState.cpp(36,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  main.cpp
-D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\PhysicsObject.h(27,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(91,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(92,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\C++ Projects\GDV_SpeedRacer\GDV_SpeedRacer\Obstacle.cpp(93,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   Generating code
-  50 of 249 functions (20.1%) were compiled, the rest were copied from previous compilation.
+  2 of 249 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

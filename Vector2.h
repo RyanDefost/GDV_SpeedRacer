@@ -23,7 +23,7 @@ public:
 
 	Vector2 operator+=(Vector2);
 
-	float magnitude();
-	Vector2 normalized(Vector2);
+	float Magnitude();
+	Vector2 Normalized(Vector2);
 };
 

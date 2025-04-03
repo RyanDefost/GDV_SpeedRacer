@@ -39,9 +39,9 @@ void PhysicsObject::SetForce(Vector2 force)
 
 void PhysicsObject::CalculateAcceleration()
 {
-	float force = this->currentForce.magnitude();
-	Vector2 normalized = this->currentForce.normalized(this->currentForce);
-	this->acceleration = (normalized * force) / this->mass;
+	float force = this->currentForce.Magnitude();
+	Vector2 Normalized = this->currentForce.Normalized(this->currentForce);
+	this->acceleration = (Normalized * force) / this->mass;
 }
 
 void PhysicsObject::CapVelocity()

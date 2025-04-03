@@ -18,7 +18,7 @@ bool Collision::CheckCollision(Collision collider)
 
 
     Vector2 distance = pos1 - pos2;
-    if (distance.magnitude() <= (this->size.x/2 + collider.size.x/2)) 
+    if (distance.Magnitude() <= (this->size.x/2 + collider.size.x/2)) 
     {
         this->isColliding = true;
         return true;

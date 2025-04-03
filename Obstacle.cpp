@@ -19,7 +19,7 @@ Obstacle::Obstacle(ScoreSystem* sc, sf::Texture im, Vector2 s, float sp, Vector2
 	this->collider.SetSize(s);
 	this->collider.SetPosition(GetPosition());
 
-	this->currentState = &AggressiveObstacleState::GetInstance();
+	this->currentState = &CalmObstacleState::GetInstance();
 	this->currentState->Enter(this);
 }
 
@@ -84,7 +84,7 @@ bool Obstacle::DetectEdge()
 /// </summary>
 void Obstacle::SetSpawnPosition()
 {
-	srand((unsigned int)((int)this->time + rand() % 101));
+	srand((unsigned int)((int)this->time + rand() % 100));
 
 	float size = GetSize().x;
 

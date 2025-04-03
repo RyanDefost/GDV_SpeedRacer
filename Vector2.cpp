@@ -58,16 +58,16 @@ Vector2 Vector2::operator+=(Vector2 vector)
 	return *this;
 }
 
-float Vector2::magnitude()
+float Vector2::Magnitude()
 {
 	return sqrt((this->x * this->x) + (this->y * this->y));
 }
 
-Vector2 Vector2::normalized(Vector2 vector)
+Vector2 Vector2::Normalized(Vector2 vector)
 {
 	Vector2 originalVector = vector;
-	float magnitude = vector.magnitude();
+	float Magnitude = vector.Magnitude();
 	
-	Vector2 normalizedVector = originalVector / magnitude;
+	Vector2 normalizedVector = originalVector / Magnitude;
 	return normalizedVector;
 }

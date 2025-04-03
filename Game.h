@@ -13,7 +13,7 @@ public:
 	Game();
 
 	void Start();
-	void Update();
+	void Run();
 
 	void CheckCollisions();
 	void DrawText(sf::RenderWindow&, sf::Font, int, sf::Color);
